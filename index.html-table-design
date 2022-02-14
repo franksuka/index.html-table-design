@@ -1,0 +1,223 @@
+<style>
+  h1 {
+    font-family: 'Lato', sans-serif;
+    text-align: center;
+    color: white;
+    background-color: #3587A4;
+    padding-top: 18px;
+    padding-right: 50px;
+    padding-bottom: 18px;
+    padding-left: 50px;
+    margin-left: 350px;
+    width: 50%;
+}
+h3 {
+    background: lightgreen;
+    width: 20%;
+    margin-left: 150px;
+    font-size: 30px;
+    color: ;
+    text-align: center;
+    height: 15%;
+    opacity: 0.5;
+}
+
+thead th {
+    background: #88CCF1;
+    color: #FFF;
+    font-family: 'Lato', sans-serif;
+    font-size: 18px;
+    font-weight: 100;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+th, td {
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+    padding-top: 20px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+    text-align: left;
+    width: 33.3333%;
+    font-size: 18px;
+}
+td {
+    display: table-cell;
+    vertical-align: inherit;
+}
+table {
+    height: 40%;
+    left: 10%;
+    margin: 20px auto;
+    margin-top: 20px;
+    margin-right: auto;
+    margin-bottom: 20px;
+    margin-left: auto;
+    overflow-y: scroll;
+    position: static;
+    width: 80%;
+}
+table {
+    display: table;
+    border: 8px solid red;
+    border-collapse: separate;
+    box-sizing: border-box;
+    text-indent: initial;
+    border-spacing: 2px;
+    -webkit-border-horizontal-spacing: 2px;
+    -webkit-border-vertical-spacing: 2px;
+    border-color: grey;
+}
+body {
+    background: #EEE;
+    margin: 0;
+    padding: 0;
+    display: block;
+}
+</style>
+
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="./resources/css/index.css">
+  </head>
+  <body>
+    <header>
+      <h1>BONAVENTURE'S STUDY SPREEDSHEET<br>
+          CSS Selectors and Specificity</h1>
+      <h3>CSS Selectors</h3>
+    </header>
+    <table>
+        <thead>
+        <tr>
+            <th scope="col">NAME</th>
+            <th scope="col">DESCRIPTION</th>
+            <th scope="col">EXAMPLE</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>Type</td>
+            <td>The type selector matches the type of the element in the HTML document</td>
+            <td>p {
+                color: green;
+              } The element type is p, which comes from the HTML &lt;p&gt; tag.</td>
+        </tr>
+        <tr>
+            <td>Universal</td>
+            <td>The universal selector selects all elements of any type.</td>
+            <td>* { 
+                font-family: Verdana;
+              } This code shows that every text element on the page will have its font changed to Verdana.</td>
+        </tr>
+        <tr>
+            <td>Class</td>
+            <td>Selecting a HTML element using a CSS class attribute.</td>
+            <td>Consider the following HTML: &lt;p class='brand'&gt;Sole Shoe Company&lt;/p&gt;. To select an HTML element by its class using CSS, a period (.) must be prepended to the class's name e.g: .brand {
+ 
+            }</td>
+        </tr>
+        <tr>
+            <td>Multiple Classes</td>
+            <td>This involves adding more than one class name to an HTML element’s class attribute.</td>
+            <td>Consider the following HTML:&lt;h1 class='green bold'&gt; ... &lt;/h1&gt; To select an HTML element by its class using CSS, .green {
+                color: green;
+              }
+               
+              .bold {
+                font-weight: bold;
+              }</td>
+        </tr>
+        <tr>
+            <td>ID</td>
+            <td>An HTML element oftentimes needs to be styled uniquely, we can give it an ID using the id attribute.</td>
+            <td>Consider the following HTML:&lt;h1 id='large-title'&gt; ... &lt;/h1&gt; To select an HTML element by its ID using CSS, #large-title {
+ 
+            } The id name is large-title, therefore the CSS selector for it is #large-title</td>
+        </tr>
+        <tr>
+            <td>Attribute</td>
+            <td>The attribute selector can be used to target HTML elements that already contain attributes.</td>
+            <td>The most basic syntax is an attribute surrounded by square brackets, [href]{
+                color: magenta;
+             }. Another way is by using type[attribute*=value]. Consider the following HTML: &lt;img src='/images/seasons/cold/winter.jpg'&gt;, The attribute selector is img[src*='winter'] {
+                height: 50px;
+              }</td>
+        </tr>
+        <tr>
+            <td>Pseudo-class</td>
+            <td>In fact, :focus, :visited, :disabled, and :active are all pseudo-classes. Factors such as user interaction, site navigation, and position in the document tree can all give elements a different state with pseudo-class.</td>
+            <td>p:hover {
+                background-color: lime;
+              }</td>
+        </tr>
+        <tr>
+            <td>Classes and ID</td>
+            <td>While classes are meant to be used many times, an ID is meant to style only one element.</td>
+            <td>For instance, imagine a page with two headlines. One headline needs to be bold and blue, and the other needs to be bold and green. Instead of writing separate CSS rules for each headline that repeat each other’s code, it’s better to write a .bold CSS rule, a .green CSS rule, and a .blue CSS rule. Then you can give one headline the bold green classes, and the other the bold blue classes.</td>
+        </tr>
+        <tr>
+            <td>Chaining</td>
+            <td>When writing CSS rules, it’s possible to require an HTML element to have two or more CSS selectors at the same time. This is done by combining multiple selectors, which we will refer to as chaining.</td>
+            <td>For instance, if there was a special class for &lt;h1&gt; elements, the CSS would look like: h1.special {
+ 
+            }.This code would select only the &lt;h1&gt; elements with a class of special. If a &lt;p&gt; element also had a class of special, the rule in the example would not style the paragraph.</td>
+        </tr>
+        <tr>
+            <td>Descendant Combinator</td>
+            <td>CSS also supports selecting elements that are nested within other HTML elements, also known as descendants.</td>
+            <td>Consider the following HTML: &lt;ul class='main-list'&gt;
+                &lt;li&gt; ... &lt;/li&gt;
+                &lt;li&gt; ... &lt;/li&gt;
+                &lt;li&gt; ... &lt;/li&gt;
+              &lt;/ul&gt; The nested &lt;li&gt; elements are descendants of the &lt;ul&gt; element and can be selected with the descendant combinator like so: .main-list li {
+ 
+            }</td>
+        </tr>
+        <tr>
+            <td>Multiple Selectors</td>
+            <td>In order to make CSS more concise, it’s possible to add CSS styles to multiple CSS selectors all at once.</td>
+            <td>For instance, the following code has repetitive style attributes: h1 {
+                font-family: Georgia;
+              }
+               
+              .menu {
+                font-family: Georgia;
+              }. Instead of writing font-family: Georgia twice for two selectors, we can separate the selectors by a comma to apply the same style to both, like this: h1, 
+              .menu {
+                font-family: Georgia;
+              }</td>
+        </tr>
+        </tbody>
+    </table>
+    <header>
+        <h3>Specificity</h3>
+    </header>
+    <table>
+        <thead>
+            <tr>
+                <th scope="col">NAME</th>
+                <th scope="col">DESCRIPTION</th>
+                <th scope="col">EXAMPLE</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Specificity</td>
+                <td>Specificity is the order by which the browser decides which CSS styles will be displayed. Ds are the most specific selector in CSS, followed by classes, and finally, type</td>
+                <td>Consider the following HTML and CSS: &lt;h1 class='headline'&gt;Breaking News&lt;/h1&gt;</td>
+            </tr>
+            <tr>
+                <td>Chaining and Specificity</td>
+                <td>Adding more than one tag, class, or ID to a CSS selector increases the specificity of the CSS selector.</td>
+                <td>For instance, consider the following CSS: p {
+                    color: blue;
+                  }
+                   
+                  .main p {
+                    color: red;
+                  }. Since .main p has a class and a p type as its selector, only the &lt;p&gt; elements inside the .main element will appear red. This occurs despite there being another more general rule that states &lt;p&gt; elements should be blue.</td>
+            </tr>
+        </tbody>
+    </table>
+  </body>
